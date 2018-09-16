@@ -14,23 +14,9 @@ class App extends Component {
     currentScore: 0,
     topScore: 0,
     rightWrong: "",
+    // ADD CLICK TO TRUE AND THEN ADD TO ARRAY
     clicked: []
   };
-  // Handling click from user on a specific icon/image
-
-  // Add Point for clicking. Increment the Score 
-
-  // Check if the icon/image has been clicked and if clicked 
-  // then the user loses. changing clicked to true. 
-
-  // handleClick = id => {
-  //   // alert("sanity!");
-  //   let shuffleFriends = arrayShuffle(friends); 
-  //   this.setState({
-  //     clicked: true,
-  //     friends: shuffleFriends
-  //   });
-  // }
 
   handleClick = id => {
     console.log("button clicked");
@@ -53,21 +39,23 @@ class App extends Component {
     if (newScore >= this.state.topScore) {
       this.setState({ topScore: newScore });
     }
-    else if (newScore === 6) {
+    else if (newScore === 3) {
       this.setState({ rightWrong: "You win!" });
     }
     this.handleShuffle();
   };
 
   handleReset = () => {
-    console.log("Reset");
     this.setState({
       currentScore: 0,
       topScore: this.state.topScore,
       rightWrong: "You lose!",
-      clicked: []
+      clicked: [],
     });
-    this.handleShuffle();
+    // HAVE A MODAL POP UP AND THEN RESET
+    // CLICK THE MODAL X and THEN IT RESTS
+    // BELOW IS A RESET MOVE TO BTN
+    window.location.href = "/";
   };
 
   handleShuffle = () => {
