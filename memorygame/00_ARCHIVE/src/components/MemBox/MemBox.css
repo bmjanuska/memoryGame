@@ -1,0 +1,9 @@
+.card > .imgIcon {
+    height: 100%;
+    width: 100%;
+  }
+
+.card { 
+  margin: 5px; 
+  width: 33.3%;
+}
