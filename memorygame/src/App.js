@@ -78,15 +78,14 @@ class App extends Component {
   render() {
     //Map over the data
     return (
-      <Wrapper>
-
+      <div>
         <Navbar
-          title="Bern Mem"
           score={this.state.currentScore}
           topScore={this.state.topScore}
           rightWrong={this.state.rightWrong}
         />
         <Header />
+        <Wrapper>
         {this.state.friends.map(friend => (
           //render a component 
           <FriendCard
@@ -99,8 +98,9 @@ class App extends Component {
             image={friend.image}
           />
         ))}
-        <Footer />
       </Wrapper>
+      <Footer />
+      </div>
     )
   };
 }

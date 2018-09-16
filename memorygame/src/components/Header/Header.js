@@ -2,7 +2,7 @@
 // The Head/ Hero image will be created here 
 
 import React from "react";
-// import"../styles/Header.css"; 
+import"./Header.css"; 
 
 const Header = () => (
     <div className="jumbotron jumbotron-fluid">
