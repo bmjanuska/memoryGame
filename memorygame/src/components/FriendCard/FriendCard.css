@@ -1,5 +1,4 @@
-.card {
-  height: 100;
+.card { 
   margin: .8rem;
   position: relative;
   text-align: left;
@@ -11,8 +10,8 @@
   text-align: center;
 }
 .card > .img-container > img {
-  height: 150px; 
-  width: 150px; 
+  height: 100px; 
+  width: 100px; 
 }
 
 .card > .content {

@@ -13,7 +13,7 @@ class App extends Component {
     friends,
     currentScore: 0,
     topScore: 0,
-    rightWrong: "",
+    winloss: "",
     // ADD CLICK TO TRUE AND THEN ADD TO ARRAY
     clicked: []
   };
@@ -38,8 +38,8 @@ class App extends Component {
     if (newScore >= this.state.topScore) {
       this.setState({ topScore: newScore });
     }
-    else if (newScore === 12) {
-      this.setState({ rightWrong: "You win!" });
+    else if (newScore === 3) {
+      this.setState({ winloss: "You win!" });
     }
     this.handleShuffle();
   };
@@ -48,7 +48,7 @@ class App extends Component {
     this.setState({
       currentScore: 0,
       topScore: this.state.topScore,
-      rightWrong: "You lose!",
+      winloss: "You lose!",
       clicked: [],
     });
     // HAVE A MODAL POP UP AND THEN RESET
@@ -69,7 +69,7 @@ class App extends Component {
         <Navbar
           score={this.state.currentScore}
           topScore={this.state.topScore}
-          rightWrong={this.state.rightWrong}
+          winloss={this.state.winloss}
         />
         <Header />
         <Wrapper>
