@@ -4,11 +4,12 @@
 import React from "react";
 import"./Header.css"; 
 
-const Header = () => (
+const Header = props => (
     <div className="jumbotron jumbotron-fluid">
         <div className="container">
             <h1 className="display-4">Memory Game</h1>
             <p className="lead">Click on all an icon to get a point! Click the same icon and start back at zero! Can you reach twelve?</p>
+            <span class="nav-link" id="rw">{props.rightWrong}</span>
         </div>
     </div>
 );

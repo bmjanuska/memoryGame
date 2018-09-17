@@ -34,12 +34,11 @@ class App extends Component {
     console.log("Increment counter " + newScore);
     this.setState({
       currentScore: newScore,
-      rightWrong: ""
     });
     if (newScore >= this.state.topScore) {
       this.setState({ topScore: newScore });
     }
-    else if (newScore === 3) {
+    else if (newScore === 12) {
       this.setState({ rightWrong: "You win!" });
     }
     this.handleShuffle();
@@ -55,7 +54,7 @@ class App extends Component {
     // HAVE A MODAL POP UP AND THEN RESET
     // CLICK THE MODAL X and THEN IT RESTS
     // BELOW IS A RESET MOVE TO BTN
-    window.location.href = "/";
+    // window.location.href = "/";
   };
 
   handleShuffle = () => {

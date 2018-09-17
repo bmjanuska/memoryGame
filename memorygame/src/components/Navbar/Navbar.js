@@ -1,16 +1,34 @@
 // Navbar
 // Includes link to home and scores
 
-import React from "react"; 
-import"./Navbar.css"; 
+import React from "react";
+import "./Navbar.css";
 
 const Navbar = props => (
-<nav className="navbar sticky-top navbar-light">
-  <a className="navbar-brand" href="/">Memory Game</a>
-  <p id="currentScore">Current Score: {props.score} </p>
-  <p id="topScore">Top Score: {props.topScore} </p>
-  <p id="rw">{props.rightWrong}</p>
-</nav>
-); 
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <ul class="navbar-nav mr-auto">
+        <li id="currentScore">
+          <a class="nav-link" href="/">Memory Game</a>
+        </li>
+      </ul>
+    </div>
+    <div class="mx-auto order-0">
+      <span class="nav-item">
+        <span class="nav-link" id="rw">{props.rightWrong}</span>
+      </span>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <span class="nav-link" id="currentScore">Current Score: {props.score}</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link" id="topScore">Top Score: {props.topScore}</span>
+        </li>
+      </ul>
+    </div>
+  </nav>
+);
 
 export default Navbar; 
