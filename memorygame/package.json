@@ -5,13 +5,15 @@
   "homepage": "https://bmjanuska.github.io/memoryGame/",
   "dependencies": {
     "array-shuffle": "^1.0.1",
+    "gh-pages": "^2.0.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build"
   }
-
 }
