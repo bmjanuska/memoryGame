@@ -9,7 +9,6 @@ const Header = props => (
         <div className="container">
             <h1 className="display-4">Memory Game</h1>
             <p className="lead">Click on all an icon to get a point! Click the same icon and start back at zero! Can you reach twelve?</p>
-            <span className="nav-link" id="rw">{props.winloss}</span>
         </div>
     </div>
 );

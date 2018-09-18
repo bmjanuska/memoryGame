@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import FriendCard from "./components/FriendCard";
 import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
+import Modal from "./components/Modal";
 import arrayShuffle from "array-shuffle";
 import friends from "./friends.json";
 import "./App.css";
@@ -13,7 +14,8 @@ class App extends Component {
     friends,
     currentScore: 0,
     topScore: 0,
-    winloss: "",
+    winLoss: "",
+    isModalOpen: false,
     // ADD CLICK TO TRUE AND THEN ADD TO ARRAY
     clicked: []
   };
@@ -35,27 +37,40 @@ class App extends Component {
     this.setState({
       currentScore: newScore,
     });
-    if (newScore >= this.state.topScore) {
-      this.setState({ topScore: newScore });
+    if (newScore === 3) {
+      this.setState({ winLoss: "Congrats! You win! Play some more?" });
+      this.toggleModal()
+      if (newScore >= this.state.topScore) {
+        this.setState({ topScore: newScore });
+      }
+    } else {
+      this.handleShuffle();
     }
-    else if (newScore === 3) {
-      this.setState({ winloss: "You win!" });
-    }
-    this.handleShuffle();
   };
 
   handleReset = () => {
     this.setState({
       currentScore: 0,
       topScore: this.state.topScore,
-      winloss: "You lose!",
+      winLoss: "You lose, try Again!",
       clicked: [],
     });
-    // HAVE A MODAL POP UP AND THEN RESET
-    // CLICK THE MODAL X and THEN IT RESTS
-    // BELOW IS A RESET MOVE TO BTN
-    // window.location.href = "/";
+    if (this.state.currentScore >= this.state.topScore) {
+      this.setState({ topScore: this.state.currentScore });
+    }
+    this.toggleModal()
   };
+
+  toggleModal = () => {
+    this.setState({
+      isModalOpen: !this.state.isModalOpen
+    })
+
+  }
+
+  replayGame = () => {
+    this.toggleModal()
+  }
 
   handleShuffle = () => {
     let shuffleFriends = arrayShuffle(friends);;
@@ -63,30 +78,37 @@ class App extends Component {
   };
 
   render() {
-    //Map over the data
+    console.log(this.state.isModalOpen);
     return (
-      <div>
+      <div style={{ position: "relative" }}>
+        {this.state.isModalOpen
+          ? <Modal
+            message={this.state.winLoss}
+            replayGame={this.replayGame}
+          />
+          : null
+        }
         <Navbar
           score={this.state.currentScore}
           topScore={this.state.topScore}
-          winloss={this.state.winloss}
+          winLoss={this.state.winLoss}
         />
         <Header />
         <Wrapper>
-        {this.state.friends.map(friend => (
-          //render a component 
-          <FriendCard
-            key={friend.id}
-            handleClick={this.handleClick}
-            handleIncrement={this.handleIncrement}
-            handleReset={this.handleReset}
-            handleShuffle={this.handleShuffle}
-            id={friend.id}
-            image={friend.image}
-          />
-        ))}
-      </Wrapper>
-      <Footer />
+          {this.state.friends.map(friend => (
+            //render a component 
+            <FriendCard
+              key={friend.id}
+              handleClick={this.handleClick}
+              handleIncrement={this.handleIncrement}
+              handleReset={this.handleReset}
+              handleShuffle={this.handleShuffle}
+              id={friend.id}
+              image={friend.image}
+            />
+          ))}
+        </Wrapper>
+        <Footer />
       </div>
     )
   };
