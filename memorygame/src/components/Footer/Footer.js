@@ -7,7 +7,7 @@ import React from "react";
 const Footer = () => (
 
 <nav className="navbar sticky-bottom navbar-light">
-  <a className="navbar-brand" href="#">Sticky bottom</a>
+  <a className="navbar-brand" href="https://github.com/bmjanuska"><i className="fab fa-github"></i></a>
 </nav>
 );
 

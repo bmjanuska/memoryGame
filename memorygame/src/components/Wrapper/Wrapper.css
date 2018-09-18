@@ -5,5 +5,6 @@
   padding: 20px;
   justify-content: space-around;
   align-content: flex-start;
-  overflow: auto;
+  background-image: linear-gradient(to bottom, #25478D, #835A90);
+  height:100%;
 }

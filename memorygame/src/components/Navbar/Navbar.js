@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 const Navbar = props => (
   <nav className="navbar navbar-expand-md navbar-dark bg-color">
-    <div className="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <div className="navbar-collapse order-1 order-md-0 dual-collapse2">
       <ul className="navbar-nav mr-auto">
         <li id="currentScore">
           <a className="nav-link" href="/">Memory Game</a>
@@ -18,7 +18,7 @@ const Navbar = props => (
         <span className="nav-link" id="rw">{props.rightWrong}</span>
       </span>
     </div>
-    <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+    <div className="navbar-collapse order-3 dual-collapse2">
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
           <span className="nav-link" id="currentScore">Current Score: {props.score}</span>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import FriendCard from "./components/FriendCard";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Wrapper from "./components/Wrapper";
 import Modal from "./components/Modal";
 import arrayShuffle from "array-shuffle";
@@ -37,8 +37,8 @@ class App extends Component {
     this.setState({
       currentScore: newScore,
     });
-    if (newScore === 3) {
-      this.setState({ winLoss: "Congrats! You win! Play some more?" });
+    if (newScore === 12) {
+      this.setState({ winLoss: "Congrats! Play some more?" });
       this.toggleModal()
       if (newScore >= this.state.topScore) {
         this.setState({ topScore: newScore });
@@ -52,7 +52,7 @@ class App extends Component {
     this.setState({
       currentScore: 0,
       topScore: this.state.topScore,
-      winLoss: "You lose, try Again!",
+      winLoss: "You lose, try again!",
       clicked: [],
     });
     if (this.state.currentScore >= this.state.topScore) {
@@ -108,7 +108,7 @@ class App extends Component {
             />
           ))}
         </Wrapper>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   };

@@ -5,7 +5,8 @@ const Modal = props => (
     <div className="resultModal">
         <div id="modalContent">
             <h1>{props.message}</h1>
-            <button onClick= {props.replayGame}>Replay the Game!</button>
+            <br></br>
+            <button class="btn btn-primary" onClick= {props.replayGame}>Replay the Game!</button>
         </div>
     </div>
 );
